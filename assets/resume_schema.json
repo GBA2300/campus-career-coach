@@ -1,0 +1,93 @@
+{
+  "$说明": "campus-career-coach 简历数据 schema。所有字段均为可选，缺失即不渲染；禁止为凑版面虚构内容。",
+  "style": "classic | modern | compact（也可由命令行 --style 覆盖）",
+  "basics": {
+    "name": "姓名（必填）",
+    "headline": "一句话定位，如：应聘新媒体运营 | 2段运营实习 | 内容数据双驱动",
+    "intention": "求职意向：新媒体运营（只写一个岗位）",
+    "phone": "138-0000-0000",
+    "email": "zhangsan@email.com（勿用 QQ 默认昵称）",
+    "city": "上海",
+    "political": "共青团员（国企/事业单位/选调需要时可写）",
+    "birth": "2003.05（部分国企需要）",
+    "photo": "证件照绝对路径（也可由命令行 --photo 传入）",
+    "extras": ["可实习6个月以上", "每周可到岗5天"],
+    "links": [
+      { "label": "作品集", "url": "https://example.com/portfolio" },
+      { "label": "GitHub", "url": "https://github.com/xxx" }
+    ]
+  },
+  "sections": [
+    {
+      "title": "教育背景",
+      "type": "timeline",
+      "items": [
+        {
+          "org": "XX大学",
+          "role": "市场营销 | 本科",
+          "period": "2022.09 - 2026.06",
+          "location": "上海",
+          "bullets": [
+            "GPA 3.7/4.0（专业前 10%），核心课程：消费者行为、市场调研、统计学",
+            "荣誉：校级一等奖学金（前 5%）、优秀学生干部"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "实习经历",
+      "type": "timeline",
+      "items": [
+        {
+          "org": "XX科技有限公司",
+          "role": "新媒体运营实习生",
+          "period": "2025.03 - 2025.08",
+          "location": "上海",
+          "bullets": [
+            "独立运营品牌公众号，3 个月产出 42 篇原创，粉丝 800→5200（+550%），单篇最高阅读 1.2 万（历史均值 6 倍）",
+            "搭建选题库与排期看板，将选题会从 90 分钟压缩至 40 分钟，团队产能提升 30%",
+            "用 Python(pandas) 自动化周报数据处理，将 8 小时人工统计压缩至 10 分钟"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "项目经历",
+      "type": "timeline",
+      "items": [
+        {
+          "org": "校园二手交易平台（个人项目）",
+          "role": "产品 & 运营负责人",
+          "period": "2024.09 - 2024.12",
+          "bullets": [
+            "调研 300 名同学需求，输出 30 页竞品与需求分析报告，确定 C2C+信用担保的产品方向",
+            "从 0 搭建社群 + 小程序，3 个月累计注册 2100 人，促成交易 480 单，GMV 约 6.7 万元"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "技能与证书",
+      "type": "kv",
+      "items": [
+        { "k": "数据分析", "v": "Excel（透视表/VLOOKUP）、SQL、Python(pandas)" },
+        { "k": "内容工具", "v": "秀米、剪映、Canva、Figma（基础）" },
+        { "k": "语言", "v": "CET-6（562）、普通话二级甲等" }
+      ]
+    },
+    {
+      "title": "荣誉奖项",
+      "type": "bullets",
+      "items": [
+        "全国大学生市场营销大赛 二等奖（团队 5 人，负责调研与方案撰写）",
+        "校辩论赛 最佳辩手"
+      ]
+    }
+  ],
+  "section_types": {
+    "timeline": "经历类。items: {org, role, period, location, bullets[]}（org/role 左对齐加粗，location/period 右对齐）",
+    "bullets": "纯条目。items: [字符串] 或 [{text}]",
+    "text": "纯段落。items: [字符串]",
+    "kv": "键值型（技能/证书）。items: [{k, v}]"
+  }
+}
